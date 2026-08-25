@@ -37,6 +37,71 @@
       color: #e11d48 !important;
       font-weight: 700 !important;
     }
+    
+    /* EXACT MOBILE DRAWER MATCHING SCREENSHOT media_1787657326716.jpg */
+    .mobile-menu-btn {
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: #111827;
+      cursor: pointer;
+      padding: 6px;
+      line-height: 1;
+      display: block;
+    }
+    @media (min-width: 1024px) {
+      .mobile-menu-btn {
+        display: none !important;
+      }
+    }
+    .mobile-nav {
+      background: #ffffff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .mobile-nav.open {
+      max-height: 480px;
+    }
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+    }
+    .mobile-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: left;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1f2937;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .mobile-nav-item:hover {
+      color: #e11d48;
+    }
+    .mobile-nav-item .new-badge {
+      background: #ff385c;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     /* Fixed navbar styling matching live */
     .navbar {
       position: sticky;
@@ -76,17 +141,24 @@
       <button id="mobile-toggle" class="mobile-menu-btn">☰</button>
     </div>
 
-    <!-- Mobile Drawer -->
+        <!-- Mobile Drawer matching exact screenshot media_1787657326716.jpg -->
     <div id="mobile-menu" class="mobile-nav">
       <nav class="mobile-nav-links">
-        <button onclick="app.showPage('home')">Home</button>
-        <button onclick="app.showPage('about')">About</button>
-        <button onclick="app.showPage('previous-results')">Previous Results</button>
-        <button onclick="app.showPage('competitions')">Competitions <span class="new-badge">NEW</span></button>
-        <button onclick="app.showPage('study-hub')">Study Hub (Mock Tests & Notes)</button>
-        <button onclick="app.showPage('sponsors')">Sponsors</button>
-        <button onclick="app.showPage('contact')">Contact Us</button>
-        <button onclick="app.showPage('support')" class="mobile-donate-btn">Support Us ❤️</button>
+        <button onclick="app.showPage('home')" class="mobile-nav-item">Home</button>
+        <button onclick="app.showPage('about')" class="mobile-nav-item">About</button>
+        <button onclick="app.showPage('previous-results')" class="mobile-nav-item">Previous Results</button>
+        <button onclick="app.showPage('competitions')" class="mobile-nav-item">
+          <span>Competitions</span>
+          <span class="new-badge">NEW</span>
+        </button>
+        <button onclick="app.showPage('sponsors')" class="mobile-nav-item">Sponsors</button>
+        <button onclick="app.showPage('contact')" class="mobile-nav-item">Contact Us</button>
+        <button onclick="app.showPage('study-hub')" class="mobile-nav-item text-blue-600">
+          <span><i class="fa-solid fa-graduation-cap mr-1"></i> Study Hub</span>
+        </button>
+        <button onclick="app.showPage('support')" class="mobile-nav-item text-rose-500 font-bold">
+          <span>Support Us ❤️</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -1027,8 +1099,13 @@
           this.showPage(newHash, false);
         });
 
-        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
-          document.getElementById('mobile-menu')?.classList.toggle('open');
+        const toggleBtn = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        toggleBtn?.addEventListener('click', () => {
+          const isOpen = mobileMenu?.classList.toggle('open');
+          if (toggleBtn) {
+            toggleBtn.innerHTML = isOpen ? '&#x2715;' : '&#x2630;';
+          }
         });
       },
 
@@ -1061,6 +1138,8 @@
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.getElementById('mobile-menu')?.classList.remove('open');
+        const tBtn = document.getElementById('mobile-toggle');
+        if (tBtn) tBtn.innerHTML = '&#x2630;';
 
         if (target === 'home') {
           setTimeout(() => this.initChart(), 150);
