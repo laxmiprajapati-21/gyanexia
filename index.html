@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="icon" href="assets/images/gyanexia_logo.png"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="description" content="Gyanexia – Learn, build skills, and grow with modern educational programs."/>
+  <title>Gyanexia</title>
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CDN for Chart.js & Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Live Exact Stylesheet directly extracted from gyanexia.in -->
+  <link href="assets/css/live_exact.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Ensure clean typography and styling seamless with live_exact.css */
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #ffffff;
+      color: #0f172a;
+    }
+    .brand-font {
+      font-family: 'Outfit', sans-serif;
+    }
+    .nav-link.active-nav {
+      color: #e11d48 !important;
+      font-weight: 700 !important;
+    }
+    /* Fixed navbar styling matching live */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #f1f5f9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== EXACT LIVE NAVBAR ==================== -->
+  <header class="navbar">
+    <div class="navbar-content">
+      <div class="logo cursor-pointer" onclick="app.showPage('home')">
+        <img src="assets/images/gyanexia_logo.png" alt="Gyanexia Logo" class="logo-img">
+        <span class="logo-text">Gyanexia</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <button id="nav-btn-home" onclick="app.showPage('home')" class="nav-link active-nav">Home</button>
+        <button id="nav-btn-about" onclick="app.showPage('about')" class="nav-link">About</button>
+        <button id="nav-btn-previous-results" onclick="app.showPage('previous-results')" class="nav-link">Previous Results</button>
+        <button id="nav-btn-competitions" onclick="app.showPage('competitions')" class="nav-link">
+          Competitions <span class="new-badge">NEW</span>
+        </button>
+        <button id="nav-btn-sponsors" onclick="app.showPage('sponsors')" class="nav-link">Sponsors</button>
+        <button id="nav-btn-contact" onclick="app.showPage('contact')" class="nav-link">Contact Us</button>
+        <button id="nav-btn-study-hub" onclick="app.showPage('study-hub')" class="nav-link text-blue-600 font-bold hover:text-blue-700">
+          <i class="fa-solid fa-graduation-cap mr-1"></i> Study Hub
+        </button>
+        <button id="nav-btn-support" onclick="app.showPage('support')" class="donate-btn">Support Us ❤️</button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-menu-btn">☰</button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="mobile-nav">
+      <nav class="mobile-nav-links">
+        <button onclick="app.showPage('home')">Home</button>
+        <button onclick="app.showPage('about')">About</button>
+        <button onclick="app.showPage('previous-results')">Previous Results</button>
+        <button onclick="app.showPage('competitions')">Competitions <span class="new-badge">NEW</span></button>
+        <button onclick="app.showPage('study-hub')">Study Hub (Mock Tests & Notes)</button>
+        <button onclick="app.showPage('sponsors')">Sponsors</button>
+        <button onclick="app.showPage('contact')">Contact Us</button>
+        <button onclick="app.showPage('support')" class="mobile-donate-btn">Support Us ❤️</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main id="app-container">
+
+    <!-- 1. HOME PAGE (EXACT MATCH GYANEXIA.IN) -->
+    <div id="page-home" class="site-page">
+      
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div class="max-w-4xl mx-auto px-4">
+          <h1 class="hero-title">
+            Welcome to <span class="hero-brand">Gyanexia</span>
+          </h1>
+          <p class="hero-description">
+            Empowering minds through knowledge and innovation. Your journey to excellence starts here.
+          </p>
+
+          <!-- EXACT TICKER -->
+          <div class="ticker-wrap" onclick="app.showPage('competitions')">
+            <div class="ticker-content">
+              <span class="ticker-item">
+                🏆 Gyanexia Talent Hunt 2026 is Coming This December – Registrations Opening Soon!
+              </span>
+              <span class="ticker-item">
+                🏆 Gyanexia Talent Hunt 2026 is Coming This December – Registrations Opening Soon!
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED COURSES / PROGRAMS -->
+      <section class="courses-section">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="courses-header">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 brand-font mb-2">Featured Programs</h2>
+            <p class="text-slate-600 text-base">Explore Gyanexia's featured learning programs and summer camp</p>
+          </div>
+
+          <div class="courses-grid">
+            <!-- Card 1 -->
+            <div class="course-card">
+              <div class="course-img-container">
+                <img src="assets/images/basic_math.png" alt="Basic Mathematics" class="course-img">
+                <span class="course-badge">Maths</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title">Basic Mathematics</h3>
+                <p class="course-description">
+                  Designed for Class 5th & 6th students. Learn arithmetic, fractions, decimals, percentages and problem-solving skills through interactive lessons.
+                </p>
+                <div class="course-tags">
+                  <span class="course-tag">🎓 Class 5-6</span>
+                  <span class="course-tag">📚 Foundation</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <span class="course-price cursor-pointer" onclick="app.showPage('study-hub')">Basic Mathematics</span>
+                <button onclick="app.showPage('study-hub')" class="course-btn disabled-btn">Coming Soon</button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="course-card">
+              <div class="course-img-container">
+                <img src="assets/images/adv_math.png" alt="Advanced Mathematics" class="course-img">
+                <span class="course-badge">Maths</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title">Advanced Mathematics</h3>
+                <p class="course-description">
+                  For Class 8th to 10th students. Strengthen algebra, geometry, reasoning and Olympiad-level thinking with advanced concepts and problem solving.
+                </p>
+                <div class="course-tags">
+                  <span class="course-tag">🎓 Class 8-10</span>
+                  <span class="course-tag">⚡ Advanced</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <span class="course-price cursor-pointer" onclick="app.showPage('study-hub')">Advanced Mathematics</span>
+                <button onclick="app.showPage('study-hub')" class="course-btn disabled-btn">Coming Soon</button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="course-card">
+              <div class="course-img-container">
+                <img src="assets/images/summer_camp.png" alt="Summer Camp" class="course-img">
+                <span class="course-badge">Summer Camp</span>
+              </div>
+              <div class="course-body">
+                <h3 class="course-title">GYANEXIA SUMMER CAMP'26</h3>
+                <p class="course-description">
+                  FREE Online Summer Camp for students of Class 5th to 10th. Learn Basic Maths, AI Basics, Communication Skills, Creativity, Life Skills and Teamwork with expert teachers.
+                </p>
+                <div class="course-tags">
+                  <span class="course-tag">📅 25 May - 15 June</span>
+                  <span class="course-tag">🎓 Class 5-10</span>
+                </div>
+              </div>
+              <div class="course-footer">
+                <span class="course-price text-rose-500 cursor-pointer" onclick="app.showPage('competitions')">Registration Closed</span>
+                <button onclick="app.showPage('competitions')" class="course-btn bg-rose-500 hover:bg-rose-600 text-white font-bold">Registration Closed</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDER / CAROUSEL -->
+      <section class="slider-section">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="slider-image-container relative">
+            <img id="carousel-img" src="assets/images/gal_2026_1.png" alt="Classroom Examination" class="slider-image">
+            <button onclick="app.prevSlide()" class="slider-arrow prev">❮</button>
+            <button onclick="app.nextSlide()" class="slider-arrow next">❯</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS / PARTICIPATION CHART -->
+      <section class="stats-section">
+        <div class="max-w-4xl mx-auto px-4">
+          <h2 class="stats-title">
+            Class-wise Participation in Competitions 📊
+          </h2>
+          <div class="chart-container">
+            <canvas id="participationChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOUNDER SECTION -->
+      <section class="founder-section">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="section-header">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#E11D48] brand-font mb-2">Meet Our Founder</h2>
+            <blockquote class="founder-subtitle">
+              "At Gyanexia, our mission is to transform quality education and knowledge sharing into an accessible and impactful experience for all."
+            </blockquote>
+          </div>
+
+          <div class="founder-card">
+            <div class="founder-image">
+              <img src="assets/images/founder-image.65405e19bb9303483795.jpeg" alt="Nikhil Prajapati">
+            </div>
+            <div class="founder-info">
+              <h3 class="founder-name">Nikhil Prajapati</h3>
+              <p class="founder-role">Founder</p>
+              <p class="founder-bio">
+                Hi, I am Nikhil Prajapati, a student at <strong>IIT Kanpur</strong> and the founder of Gyanexia.
+              </p>
+              <div class="founder-quote">
+                "Talent is everywhere, but opportunity is not. We're here to ensure every student gets a fair chance."
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 2. ABOUT US PAGE -->
+    <div id="page-about" class="site-page hidden">
+      <div class="about-container">
+        <h1 class="about-title">About Us</h1>
+        <p class="text-lg text-slate-800 font-medium mb-6">
+          Welcome to <strong>Gyanexia</strong> — a platform dedicated to empowering minds through knowledge and innovation.
+        </p>
+        <p class="text-slate-700 text-base leading-relaxed mb-6">
+          At Gyanexia, we believe that every student deserves access to quality education, regardless of their background. Education opens doors to endless opportunities, and we are committed to making learning engaging, affordable, and accessible for all. Through our academic competitions, quizzes, and learning programs, we aim to motivate students to study, explore their potential, and develop a lifelong passion for learning. We especially focus on supporting underprivileged students by providing them with affordable access to educational opportunities, mentorship, and guidance. Our initiatives are designed to bridge the educational gap and ensure that no student is left behind due to financial or social barriers. Together, we strive to build a community where knowledge empowers every learner to achieve their dreams
+        </p>
+        <p class="text-slate-700 text-base leading-relaxed mb-10">
+          Our goal is to bridge the gap between knowledge and opportunity by providing resources, competitions, and a supportive community for learners and innovators worldwide.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="about-mission p-8 rounded-3xl bg-[#F8FAFC] border border-slate-100 shadow-sm space-y-3">
+            <h3 class="text-xl font-bold text-[#2563EB] flex items-center gap-2">
+              <span>🎯</span> <span>Our Mission</span>
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              Our mission is to provide quality education at minimum fees so that underprivileged students can dream big, learn better, and achieve their goals. We aim to bridge the gap between talent and opportunity by creating a fair and supportive learning environment.
+            </p>
+          </div>
+          <div class="about-vision p-8 rounded-3xl bg-[#F8FAFC] border border-slate-100 shadow-sm space-y-3">
+            <h3 class="text-xl font-bold text-[#2563EB] flex items-center gap-2">
+              <span>🌍</span> <span>Our Vision</span>
+            </h3>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              Our vision is to build a future where no child is left behind because of financial barriers. We want to empower students with knowledge, skills, and confidence, so they can contribute to society and create a brighter tomorrow for themselves and others.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PREVIOUS RESULTS PAGE -->
+    <div id="page-previous-results" class="site-page hidden">
+      <div class="results-container">
+        <h1 class="results-title">Previous Results</h1>
+
+        <!-- 2026 Gyanotsav 2.0 -->
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-center text-slate-900 mb-8">Gyanotsav 2.0 – Top 3 Winners</h2>
+          <div class="winner-grid grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="winner-card border-2 border-amber-400 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4">
+                <img src="assets/images/winner_2026_1.png" alt="Abhikarsh" class="winner-img w-full h-full object-cover">
+              </div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥇 1st Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Abhikarsh</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">NATIONAL PRATHAM ACADEMY, JB GANJ KHERI</p>
+            </div>
+            <div class="winner-card border-2 border-amber-400 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4">
+                <img src="assets/images/winner_2026_2.png" alt="Sarthak Kumar" class="winner-img w-full h-full object-cover">
+              </div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥈 2nd Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Sarthak Kumar</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">NATIONAL PRATHAM ACADEMY, JB GANJ KHERI</p>
+            </div>
+            <div class="winner-card border-2 border-amber-400 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4">
+                <img src="assets/images/winner_2026_3.png" alt="Aditya Shukla" class="winner-img w-full h-full object-cover">
+              </div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥉 3rd Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Aditya Shukla</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">GSM MEMORIAL ACADEMY, BARKHERIA JAT, KHERI</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2026 Gallery -->
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-center text-slate-900 mb-8">Gyanotsav 2.0 – Gallery</h2>
+          <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_1.png" alt="Gallery 1" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_2.png" alt="Gallery 2" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_3.png" alt="Gallery 3" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_4.png" alt="Gallery 4" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_5.png" alt="Gallery 5" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_6.png" alt="Gallery 6" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_7.png" alt="Gallery 7" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_8.png" alt="Gallery 8" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_9.png" alt="News 1" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_10.png" alt="News 2" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2026_11.png" alt="News 3" class="gallery-img w-full h-full object-cover"></div>
+          </div>
+        </div>
+
+        <!-- 2025 Winners -->
+        <div class="mb-16">
+          <h2 class="text-2xl font-bold text-center text-slate-900 mb-8">Gyanotsav Competition – 2025 Top 3 Winners</h2>
+          <div class="winner-grid grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="winner-card border border-slate-200 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4"><img src="assets/images/winner_2025_1.png" alt="Himanshu" class="winner-img w-full h-full object-cover"></div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥇 1st Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Himanshu</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">NATIONAL PRATHAM ACADEMY, JB GANJ</p>
+            </div>
+            <div class="winner-card border border-slate-200 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4"><img src="assets/images/winner_2025_2.png" alt="Abhishek Saxena" class="winner-img w-full h-full object-cover"></div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥈 2nd Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Abhishek Saxena</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">VIBHU STUDY POINT, BARKHERIA JAT, KHERI</p>
+            </div>
+            <div class="winner-card border border-slate-200 p-4 rounded-2xl bg-white text-center shadow-sm">
+              <div class="rounded-xl overflow-hidden h-80 bg-slate-100 mb-4"><img src="assets/images/winner_2025_3.png" alt="Pranshu" class="winner-img w-full h-full object-cover"></div>
+              <div class="winner-rank text-[#2563EB] font-bold text-base">🥉 3rd Winner</div>
+              <h3 class="winner-name text-lg font-bold text-slate-900 mt-1">Pranshu</h3>
+              <p class="winner-school text-[11px] font-semibold text-slate-500 uppercase">RD PUBLIC SCHOOL, JB GANJ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2025 Gallery -->
+        <div>
+          <h2 class="text-2xl font-bold text-center text-slate-900 mb-8">Gyanotsav Competition – 2025 Gallery</h2>
+          <div class="gallery-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_1.png" alt="2025 Photo 1" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_2.png" alt="2025 Photo 2" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_3.png" alt="2025 Photo 3" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_4.png" alt="2025 Photo 4" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_5.png" alt="2025 Photo 5" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_6.png" alt="2025 Photo 6" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_7.png" alt="2025 Photo 7" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_8.png" alt="2025 Photo 8" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_9.png" alt="2025 Photo 9" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_10.png" alt="2025 Photo 10" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_11.png" alt="2025 Photo 11" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_12.png" alt="2025 Photo 12" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_13.png" alt="News 1" class="gallery-img w-full h-full object-cover"></div>
+            <div class="gallery-item rounded-2xl overflow-hidden border aspect-[4/3]"><img src="assets/images/gal_2025_14.png" alt="News 2" class="gallery-img w-full h-full object-cover"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. COMPETITIONS PAGE -->
+    <div id="page-competitions" class="site-page hidden">
+      <div class="competition-container">
+        <div class="competition-card">
+          <h2 class="competition-title">🏆 Gyanexia Talent Hunt</h2>
+          <p class="competition-tagline">Discover the Best Young Minds!</p>
+          <div class="competition-info">
+            <p>🎯 Classes: 5th – 12th</p>
+            <p>📍 Mode: Offline</p>
+            <p>🗓️ Exam Date: <strong>December 2026</strong></p>
+            <p>🏅 Prize details will be announced soon.</p>
+          </div>
+          <p class="competition-note">
+            👉 Subjects and topics will be notified soon. Stay tuned for updates! 📚✨
+          </p>
+          <button onclick="app.openTalentHuntModal()" class="notify-btn">Get Notified</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. SPONSORS PAGE -->
+    <div id="page-sponsors" class="site-page hidden">
+      <div class="sponsors-container">
+        <h1 class="sponsors-title">Our Sponsors</h1>
+        <div class="sponsors-card">
+          <p>
+            We will be grateful to organizations and individuals who support <strong>Gyanexia</strong> in empowering young minds through learning and competitions. 🤝✨
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. CONTACT US PAGE -->
+    <div id="page-contact" class="site-page hidden">
+      <div class="contact-container">
+        <h1 class="contact-title">Contact Us</h1>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+918840284749">+91 8840284749</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:gyanexia@gmail.com">gyanexia@gmail.com</a>
+            </div>
+            <div class="contact-item whatsapp">
+              <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+              <a href="https://wa.me/918840284749" target="_blank">Chat on WhatsApp</a>
+            </div>
+            <div class="contact-item instagram">
+              <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
+              <a href="https://instagram.com/gyanexia_edu" target="_blank">@gyanexia_edu</a>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <h2>Send Your Query</h2>
+            <form onsubmit="app.handleContactWhatsApp(event)" class="contact-form">
+              <input id="contact-name" type="text" required placeholder="Your Name" class="form-input">
+              <input id="contact-phone" type="tel" required placeholder="Phone Number" class="form-input">
+              <input id="contact-address" type="text" placeholder="Address" class="form-input">
+              <textarea id="contact-msg" rows="4" required placeholder="Your Query / Message" class="form-textarea"></textarea>
+              <button type="submit" class="submit-btn">Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. SUPPORT US PAGE (DONATE) -->
+    <div id="page-support" class="site-page hidden">
+      <div class="donate-container">
+        <div class="donate-hero">
+          <h1>Support Gyanexia ❤️</h1>
+          <p>Your contribution helps us organize competitions, support students, and create better educational opportunities through Gyanexia.</p>
+        </div>
+
+        <div class="donate-card">
+          <h2>Make a Contribution</h2>
+          <p>Every contribution creates opportunities for students to learn, compete, and grow.</p>
+          <button onclick="app.openRazorpayModal()" class="support-pay-btn">Support Us ❤️</button>
+        </div>
+
+        <p class="thankyou-footer">Thank you for supporting the Gyanexia community 🌟</p>
+      </div>
+    </div>
+
+    <!-- 8. STUDY HUB PAGE -->
+    <div id="page-study-hub" class="site-page hidden py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 space-y-12">
+        <div class="text-center max-w-3xl mx-auto">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700 uppercase">Learning Portal</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 brand-font mt-3 mb-4">Gyanexia Study Hub</h2>
+          <p class="text-slate-600 text-base">Practice timed mock tests, download Class 5-12 handwritten revision notes, and solve doubts with GyanAI.</p>
+        </div>
+
+        <div class="p-8 rounded-3xl border border-slate-200 bg-slate-50 space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-laptop-code text-blue-600"></i>
+            <span>Interactive Timed Mock Tests (GyanExam)</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700">Class 8-10</span>
+                <h4 class="font-bold text-base text-slate-900 mt-1">Gyanexia Talent Hunt 2026 Diagnostic Test</h4>
+                <p class="text-xs text-slate-500 mt-1">8 Questions • 15 Mins • Math, Physics & Logical Reasoning</p>
+              </div>
+              <button onclick="app.openMockTestModal('talent-hunt-2026-sample')" class="mt-4 py-2.5 rounded-xl font-bold text-xs bg-blue-600 text-white hover:bg-blue-700 transition">
+                Start Test Simulator
+              </button>
+            </div>
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between">
+              <div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700">Class 5-6</span>
+                <h4 class="font-bold text-base text-slate-900 mt-1">Junior Mathematics Olympiad Qualifier</h4>
+                <p class="text-xs text-slate-500 mt-1">6 Questions • 10 Mins • Speed arithmetic & geometry logic</p>
+              </div>
+              <button onclick="app.openMockTestModal('junior-math-olympiad')" class="mt-4 py-2.5 rounded-xl font-bold text-xs bg-emerald-600 text-white hover:bg-emerald-700 transition">
+                Start Test Simulator
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-book-open text-rose-500"></i>
+            <span>Class 5 to 12 Revision Notes & Formula Sheets</span>
+          </h3>
+          <div id="hub-study-materials-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. TERMS AND CONDITIONS -->
+    <div id="page-terms" class="site-page hidden">
+      <div class="legal-container">
+        <h1>Terms and Conditions</h1>
+        <p><strong>Effective Date:</strong> 01/10/2025</p>
+        <p>
+          Welcome to <a href="https://www.gyanexia.in/">www.gyanexia.in</a> (“we”, “us”, “our”). By accessing or using our website, registering for events, or making a payment, you agree to comply with and be bound by these Terms and Conditions. These terms are governed by applicable Indian laws, including the Information Technology Act, 2000, and the Consumer Protection Act, 2019.
+        </p>
+
+        <h3>1. About Gyanexia</h3>
+        <p>Gyanexia is an educational initiative aimed at promoting academic excellence, innovation, and learning opportunities for students from Classes 5th to 12th through competitions, programs, and events conducted online and offline.</p>
+
+        <h3>2. Registration and Participation</h3>
+        <ul>
+          <li>Participants must provide accurate personal and academic information during registration.</li>
+          <li>Registrations are considered confirmed only after successful payment and verification by the Gyanexia team.</li>
+          <li>Any misuse, false information, or misconduct may lead to disqualification without refund.</li>
+        </ul>
+
+        <h3>3. Payments</h3>
+        <ul>
+          <li>All payments are accepted through secure online gateways as listed on our website.</li>
+          <li>Fees once paid are non-transferable and subject to our <a href="#refund" onclick="app.showPage('refund')">Refund Policy</a>.</li>
+          <li>Payment confirmation will be sent to your registered email after successful transaction.</li>
+        </ul>
+
+        <h3>4. Use of Website</h3>
+        <ul>
+          <li>You agree not to misuse the website for any unlawful activities or to disrupt its functionality.</li>
+          <li>Content on this website, including text, graphics, logos, and competition materials, is the property of Gyanexia and cannot be copied, reproduced, or distributed without prior written consent.</li>
+        </ul>
+
+        <h3>5. Intellectual Property</h3>
+        <p>All materials, question papers, syllabus, designs, and content published by Gyanexia are protected under Indian copyright laws. Unauthorized reproduction or commercial use is strictly prohibited.</p>
+
+        <h3>6. Limitation of Liability</h3>
+        <p>Gyanexia will not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use our services, server downtime, or technical errors.</p>
+
+        <h3>7. Governing Law and Jurisdiction</h3>
+        <p>These Terms shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the courts located in Uttar Pradesh, India.</p>
+
+        <h3>8. Contact Information</h3>
+        <p>If you have any questions regarding these Terms and Conditions, please reach out to us:</p>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:gyanexia@gmail.com">gyanexia@gmail.com</a><br>📞 <strong>Phone:</strong> <a href="tel:+918840284749">+91 8840284749</a></p>
+      </div>
+    </div>
+
+    <!-- 10. PRIVACY POLICY -->
+    <div id="page-privacy" class="site-page hidden">
+      <div class="legal-container">
+        <h1>Privacy Policy</h1>
+        <p><strong>Effective Date:</strong> 01/10/2025</p>
+        <p>
+          At <strong>Gyanexia</strong>, accessible from <a href="https://www.gyanexia.in/">www.gyanexia.in</a>, we are committed to protecting the privacy and personal data of our users, students, parents, and visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard your information in accordance with Indian laws including the Information Technology Rules, 2011.
+        </p>
+
+        <h3>1. Information We Collect</h3>
+        <p>We collect information that you provide directly to us when registering for competitions, filling forms, or contacting us:</p>
+        <ul>
+          <li><strong>Personal Details:</strong> Student Name, Guardian Name, Class/Grade, School Name, Date of Birth.</li>
+          <li><strong>Contact Information:</strong> Email address, Mobile/WhatsApp number, City, State.</li>
+          <li><strong>Payment Information:</strong> Transaction ID, Payment Date & Amount (processed securely through authorized third-party gateways).</li>
+        </ul>
+
+        <h3>2. How We Use Your Information</h3>
+        <ul>
+          <li>To register and administer student participation in Gyanexia Talent Hunts, quizzes, and competitions.</li>
+          <li>To issue admit cards, roll numbers, exam instructions, and verify results.</li>
+          <li>To send important announcements, scorecards, certificates, and event updates.</li>
+          <li>To provide customer support and respond to queries.</li>
+        </ul>
+
+        <h3>3. Information Sharing and Disclosure</h3>
+        <p>We respect your privacy. We <strong>do not sell, rent, or trade</strong> your personal information to third parties.</p>
+
+        <h3>4. Data Security</h3>
+        <p>We implement reasonable physical, technical, and managerial security practices to protect your data against unauthorized access.</p>
+
+        <h3>5. Contact Us</h3>
+        <p>For any privacy-related inquiries, contact us:</p>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:gyanexia@gmail.com">gyanexia@gmail.com</a><br>📞 <strong>Phone:</strong> <a href="tel:+918840284749">+91 8840284749</a></p>
+      </div>
+    </div>
+
+    <!-- 11. REFUND POLICY -->
+    <div id="page-refund" class="site-page hidden">
+      <div class="legal-container">
+        <h1>Refund Policy</h1>
+        <p><strong>Effective Date:</strong> 01/10/2025</p>
+        <p>Thank you for participating in <strong>Gyanexia</strong> programs and competitions. This Refund Policy outlines the terms and conditions regarding payments, cancellations, and refunds.</p>
+
+        <h3>1. Registration Fees</h3>
+        <ul>
+          <li>Registration fees for Gyanexia competitions, summer camps, and talent hunts are non-refundable once registration is confirmed.</li>
+        </ul>
+
+        <h3>2. Event Cancellation or Rescheduling</h3>
+        <ul>
+          <li>In the rare event that Gyanexia cancels a competition without a rescheduled date, 100% of the registration fee will be refunded.</li>
+          <li>If an event is postponed, registrations will remain valid for the new date and no refund will be issued.</li>
+        </ul>
+
+        <h3>3. Duplicate Payments</h3>
+        <p>If an amount was debited more than once for the same registration due to technical glitch, the duplicate amount will be refunded in full after verification.</p>
+
+        <h3>4. Refund Processing Timeline</h3>
+        <p>Approved refunds will be processed within <strong>5 to 7 working days</strong> to the original payment source.</p>
+
+        <h3>5. Contact Information</h3>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:gyanexia@gmail.com">gyanexia@gmail.com</a><br>📞 <strong>Phone:</strong> <a href="tel:+918840284749">+91 8840284749</a></p>
+      </div>
+    </div>
+
+    <!-- 12. DISCLAIMER -->
+    <div id="page-disclaimer" class="site-page hidden">
+      <div class="legal-container">
+        <h1>Disclaimer</h1>
+        <p><strong>Effective Date:</strong> 01/10/2025</p>
+        <p>The information and services provided on <a href="https://www.gyanexia.in/">www.gyanexia.in</a> are for general educational and informational purposes only.</p>
+
+        <h3>1. Educational Content & Assessments</h3>
+        <p>While Gyanexia strives to maintain the highest standard of academic accuracy, all materials are designed as supplementary learning resources. We do not guarantee specific academic outcomes.</p>
+
+        <h3>2. Competitions & Award Decisions</h3>
+        <p>Evaluation, scoring, rank allocation, and award decisions in Gyanotsav and Gyanexia Talent Hunts are conducted fairly by our academic panel. All final decisions made by the committee are definitive.</p>
+
+        <h3>3. Independent Initiative</h3>
+        <p>Gyanexia is an independent educational initiative founded by Nikhil Prajapati (IIT Kanpur) dedicated to youth empowerment and learning access.</p>
+
+        <h3>4. Contact Us</h3>
+        <p>✉️ <strong>Email:</strong> <a href="mailto:gyanexia@gmail.com">gyanexia@gmail.com</a><br>📞 <strong>Phone:</strong> <a href="tel:+918840284749">+91 8840284749</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== EXACT LIVE FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-company">
+          <div class="footer-logo">
+            <span class="footer-logo-text">Gyanexia</span>
+          </div>
+          <p class="footer-description">
+            Empowering minds through knowledge and innovation. Your journey to excellence starts here.
+          </p>
+          <div class="social-links">
+            <a href="https://gyanexia.in" target="_blank" class="social-icon">🌐</a>
+            <a href="https://instagram.com/gyanexia_edu" target="_blank" class="social-icon">📷</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-list">
+            <li><button onclick="app.showPage('home')" class="footer-link">Home</button></li>
+            <li><button onclick="app.showPage('about')" class="footer-link">About</button></li>
+            <li><button onclick="app.showPage('competitions')" class="footer-link">Competitions</button></li>
+            <li><button onclick="app.showPage('terms')" class="footer-link">Terms & Conditions</button></li>
+            <li><button onclick="app.showPage('privacy')" class="footer-link">Privacy Policy</button></li>
+            <li><button onclick="app.showPage('refund')" class="footer-link">Refund Policy</button></li>
+            <li><button onclick="app.showPage('disclaimer')" class="footer-link">Disclaimer</button></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">📞</span>
+              <span>+91 8840284749</span>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon">✉️</span>
+              <span>gyanexia@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 Gyanexia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== RAZORPAY DEMO SIMULATION MODAL ==================== -->
+  <div id="razorpay-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-sm rounded-2xl bg-white shadow-2xl overflow-hidden flex flex-col border border-slate-200">
+      
+      <!-- Top Blue Header -->
+      <div class="bg-[#2563EB] text-white p-4">
+        <div class="text-[11px] font-semibold text-blue-100 flex justify-between items-center mb-2">
+          <span>Payment</span>
+          <span class="flex gap-1">
+            <span class="w-4 h-1.5 bg-emerald-400 rounded-full"></span>
+            <span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span>
+            <span class="w-1.5 h-1.5 bg-blue-300 rounded-full"></span>
+          </span>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <button onclick="app.closeRazorpayModal()" class="text-white hover:text-blue-200 text-sm"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="w-7 h-7 rounded-full bg-blue-700/60 text-white font-bold flex items-center justify-center text-xs">N</div>
+            <span class="font-bold text-sm tracking-wider uppercase">NIKHIL KUMAR</span>
+          </div>
+          <div class="w-7 h-7 rounded-full bg-blue-700/60 text-white flex items-center justify-center text-xs">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div id="rzp-step-1" class="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
+        <h4 class="font-bold text-sm text-slate-900">Payment Options</h4>
+        <div class="p-2.5 rounded-xl bg-blue-50/70 border border-blue-100 flex items-center justify-between text-xs">
+          <div class="flex items-center gap-2 text-slate-700 font-medium">
+            <span class="text-rose-500">🏷️</span>
+            <span>Upto 1.5% savings with...</span>
+          </div>
+          <button class="text-blue-600 font-bold flex items-center gap-1 hover:underline"><i class="fa-solid fa-percent text-[10px]"></i> View all</button>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-700 mb-3">
+            <span>UPI QR</span>
+            <span class="text-slate-400 font-mono text-[11px] flex items-center gap-1"><i class="fa-regular fa-clock"></i> 11:41</span>
+          </div>
+          <div class="grid grid-cols-12 gap-3 items-center">
+            <div class="col-span-5 bg-white p-2 rounded-xl shadow-sm border text-center">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi%3A%2F%2Fpay%3Fpa%3Dgyanexia%40upi%26pn%3DNIKHIL%2520KUMAR%26am%3D10%26cu%3DINR%26tn%3DGyanexia%2520Contribution" alt="UPI QR" class="w-24 h-24 mx-auto">
+            </div>
+            <div class="col-span-7 space-y-1.5">
+              <p class="text-xs font-semibold text-slate-800 leading-snug">Scan the QR using any UPI App</p>
+              <div class="flex items-center gap-1.5 text-xs text-slate-400 pt-1">
+                <span class="w-4 h-4 rounded bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-[9px]">P</span>
+                <span class="w-4 h-4 rounded bg-blue-100 text-blue-700 font-bold flex items-center justify-center text-[9px]">G</span>
+                <span class="w-4 h-4 rounded bg-cyan-100 text-cyan-700 font-bold flex items-center justify-center text-[9px]">₹</span>
+                <span class="w-4 h-4 rounded bg-purple-100 text-purple-700 font-bold flex items-center justify-center text-[9px]">Pe</span>
+              </div>
+              <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold text-emerald-700 bg-emerald-50">2 Offers</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">Enter Amount (₹)</label>
+          <input id="rzp-custom-amt" type="number" value="10" oninput="app.updateRzpAmount(this.value)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold text-slate-900">
+          <div class="flex gap-2 mt-2">
+            <button onclick="app.setRzpAmount(10)" class="flex-1 py-1 text-xs font-bold rounded-lg border bg-slate-50">₹10</button>
+            <button onclick="app.setRzpAmount(100)" class="flex-1 py-1 text-xs font-bold rounded-lg border bg-slate-50">₹100</button>
+            <button onclick="app.setRzpAmount(500)" class="flex-1 py-1 text-xs font-bold rounded-lg border bg-slate-50">₹500</button>
+            <button onclick="app.setRzpAmount(1000)" class="flex-1 py-1 text-xs font-bold rounded-lg border bg-slate-50">₹1000</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div id="rzp-step-2" class="hidden p-5 space-y-4 max-h-[70vh] overflow-y-auto">
+        <div class="text-[11px] font-semibold text-slate-400 mb-2">Recommended</div>
+        <button onclick="app.startPaymentProcessing('Google Pay')" class="w-full p-3.5 rounded-xl border bg-slate-50 flex items-center justify-between">
+          <div class="flex items-center gap-2.5 text-xs font-bold text-slate-800">
+            <span class="w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center text-blue-600 font-bold">G</span>
+            <span>UPI - Google Pay</span>
+          </div>
+          <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+        </button>
+
+        <div class="text-[11px] font-semibold text-slate-400 mb-2">All Payment Options</div>
+        <div class="space-y-2">
+          <button onclick="app.startPaymentProcessing('UPI')" class="w-full p-3.5 rounded-xl border bg-white flex items-center justify-between text-left">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-mobile-screen-button text-blue-600 text-sm"></i>
+              <div><div class="text-xs font-bold text-slate-800">UPI (PhonePe, GPay, Paytm)</div><span class="px-1.5 py-0.2 rounded text-[9px] font-bold bg-emerald-50 text-emerald-700">2 Offers</span></div>
+            </div>
+            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+          </button>
+          <button onclick="app.startPaymentProcessing('Cards')" class="w-full p-3.5 rounded-xl border bg-white flex items-center justify-between text-left">
+            <div class="flex items-center gap-3"><i class="fa-regular fa-credit-card text-slate-700 text-sm"></i><div class="text-xs font-bold text-slate-800">Cards (Visa, Mastercard, RuPay)</div></div>
+            <i class="fa-solid fa-chevron-right text-slate-400 text-xs"></i>
+          </button>
+          <button onclick="app.startPaymentProcessing('Netbanking')" class="w-full p-3.5 rounded-xl border bg-white flex items-center justify-between text-left">
+            <div class="flex items-center gap-3"><i class="fa-solid fa-building-columns text-slate-700 text-sm"></i><div class="text-xs font-bold text-slate-800">Netbanking (All Banks)</div></div>
+            <i class="fa-solid fa-chevron-down text-slate-400 text-xs"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div id="rzp-step-3" class="hidden p-8 text-center space-y-6">
+        <div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Processing your payment</h3>
+          <p class="text-xs text-slate-500">This will only take a few seconds.</p>
+        </div>
+        <div class="py-6 flex justify-center">
+          <div class="w-20 h-20 rounded-full border-4 border-amber-100 border-t-amber-400 animate-spin"></div>
+        </div>
+        <button onclick="app.cancelPaymentProcessing()" class="w-full py-2.5 rounded-xl border text-xs font-bold text-slate-700 hover:bg-slate-50">Cancel</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div id="rzp-step-4" class="hidden p-8 text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto shadow"><i class="fa-solid fa-check"></i></div>
+        <h3 class="text-lg font-bold text-slate-900">Payment Successful!</h3>
+        <p class="text-xs text-slate-600">Demo contribution of <strong id="success-amt-text">₹10</strong> successfully simulated.</p>
+        <button onclick="app.closeRazorpayModal()" class="w-full py-2.5 rounded-xl bg-black text-white font-bold text-xs">Done</button>
+      </div>
+
+      <!-- Footer Bar -->
+      <div id="rzp-footer-bar" class="p-4 border-t border-slate-100 flex items-center justify-between bg-white">
+        <div>
+          <div class="text-sm font-bold text-slate-900" id="rzp-total-amt-display">₹10</div>
+          <button class="text-[10px] text-slate-400">View Details</button>
+        </div>
+        <button onclick="app.goToRzpStep2()" class="px-8 py-2.5 rounded-xl bg-[#0F172A] hover:bg-slate-800 text-white font-bold text-xs">Continue</button>
+      </div>
+      <div class="bg-slate-100 py-1.5 text-center text-[10px] text-slate-500">Secured by <strong>Razorpay</strong></div>
+    </div>
+  </div>
+
+  <!-- TALENT HUNT MODAL -->
+  <div id="talent-hunt-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl rounded-3xl bg-white border shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+      <div class="p-6 border-b flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-rose-500 text-white flex items-center justify-center text-sm font-bold">🏆</div>
+          <div>
+            <h3 class="text-lg font-bold text-slate-900">Gyanexia Talent Hunt 2026</h3>
+            <p class="text-xs text-slate-500">Official Pre-Registration & Admit Pass</p>
+          </div>
+        </div>
+        <button onclick="app.closeTalentHuntModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="reg-form-view" class="p-6 overflow-y-auto">
+        <form onsubmit="app.handleRegistrationSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Student Full Name *</label>
+              <input id="reg-name" type="text" required placeholder="e.g. Aryan Sharma" class="w-full px-4 py-2.5 rounded-xl border text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Class / Grade *</label>
+              <select id="reg-class" required class="w-full px-4 py-2.5 rounded-xl border text-sm">
+                <option value="Class 5">Class 5</option>
+                <option value="Class 6">Class 6</option>
+                <option value="Class 7">Class 7</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Class 9">Class 9</option>
+                <option value="Class 10" selected>Class 10</option>
+                <option value="Class 11">Class 11</option>
+                <option value="Class 12">Class 12</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">School Name *</label>
+              <input id="reg-school" type="text" required placeholder="e.g. Delhi Public School" class="w-full px-4 py-2.5 rounded-xl border text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">City & State *</label>
+              <input id="reg-city" type="text" required placeholder="e.g. Kanpur, UP" class="w-full px-4 py-2.5 rounded-xl border text-sm">
+            </div>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-rose-500 to-red-600 text-white hover:from-rose-600 shadow transition">
+            Generate Official Admit Card & Pass
+          </button>
+        </form>
+      </div>
+      <div id="reg-admit-view" class="hidden p-6 overflow-y-auto">
+        <div id="admit-card-printable" class="p-6 rounded-2xl border-2 border-slate-300 bg-white shadow space-y-4">
+          <div class="flex justify-between items-center pb-3 border-b">
+            <h4 class="font-extrabold text-sm text-slate-900">GYANEXIA TALENT HUNT 2026</h4>
+            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Verified Candidate</span>
+          </div>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div><span class="text-slate-400">Roll No:</span> <strong id="admit-roll" class="block font-mono">GYAN26-882190</strong></div>
+            <div><span class="text-slate-400">Name:</span> <strong id="admit-name" class="block">Aryan Sharma</strong></div>
+            <div><span class="text-slate-400">Class:</span> <strong id="admit-class" class="block">Class 10</strong></div>
+            <div><span class="text-slate-400">Date:</span> <strong id="admit-date" class="block text-rose-600">15 Dec 2026</strong></div>
+          </div>
+        </div>
+        <button onclick="window.print()" class="mt-4 px-6 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white"><i class="fa-solid fa-print mr-1"></i> Print Admit Pass</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEST SIMULATOR MODAL -->
+  <div id="mock-test-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-4xl rounded-3xl bg-white border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[95vh] p-6 md:p-8">
+      <div class="flex flex-wrap items-center justify-between pb-4 mb-6 border-b gap-4">
+        <div class="flex items-center gap-3">
+          <button onclick="app.closeMockTestModal()" class="w-9 h-9 rounded-xl border flex items-center justify-center hover:bg-slate-100"><i class="fa-solid fa-arrow-left"></i></button>
+          <div>
+            <span id="test-header-badge" class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-700">Class</span>
+            <h3 id="test-header-title" class="text-lg font-bold text-slate-900">Exam Title</h3>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div id="test-timer-display" class="px-3 py-1.5 rounded-xl bg-slate-100 border text-xs font-semibold">
+            Time Left: <span class="font-mono font-bold text-blue-600">15:00</span>
+          </div>
+          <button onclick="examEngine.confirmSubmit()" class="px-5 py-2 rounded-xl font-bold text-xs bg-emerald-600 text-white hover:bg-emerald-700 transition">Submit Test</button>
+        </div>
+      </div>
+      <div id="test-runner-container" class="overflow-y-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div class="lg:col-span-8 flex flex-col justify-between">
+            <div id="test-question-body"></div>
+            <div class="flex items-center justify-between pt-6 mt-6 border-t">
+              <div class="flex items-center gap-2">
+                <button onclick="examEngine.prevQuestion()" class="px-3 py-2 rounded-xl text-xs font-bold border">Prev</button>
+                <button onclick="examEngine.nextQuestion()" class="px-3 py-2 rounded-xl text-xs font-bold border">Next</button>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="examEngine.clearOption()" class="px-3 py-2 text-xs font-bold text-slate-400">Clear</button>
+                <button onclick="examEngine.markForReview()" class="px-3 py-2 text-xs font-bold bg-purple-50 text-purple-700 rounded-xl">Review</button>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-4 p-4 rounded-2xl bg-slate-50 border">
+            <h4 class="font-bold text-xs text-slate-900 mb-3">Question Palette</h4>
+            <div id="test-question-palette" class="grid grid-cols-5 gap-2 mb-4"></div>
+            <div class="text-[11px] space-y-1.5 text-slate-500 pt-3 border-t">
+              <div class="flex justify-between"><span>Answered</span> <span id="stat-answered" class="font-bold">0</span></div>
+              <div class="flex justify-between"><span>Unanswered</span> <span id="stat-unanswered" class="font-bold">0</span></div>
+              <div class="flex justify-between"><span>Review</span> <span id="stat-review" class="font-bold">0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="test-result-container" class="hidden overflow-y-auto">
+        <div class="text-center py-4">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Test Assessment Completed!</h3>
+          <div class="text-2xl font-extrabold text-blue-600 font-mono" id="res-score-value">0 / 32</div>
+        </div>
+        <div id="solutions-review-container" class="space-y-4 pt-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="assets/js/study-data.js"></script>
+  <script src="assets/js/tests-engine.js"></script>
+  <script src="assets/js/gyan-ai.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script>
+    const app = {
+      currentAmount: 10,
+      slides: [
+        'assets/images/gal_2026_1.png',
+        'assets/images/gal_2026_2.png',
+        'assets/images/gal_2026_3.png',
+        'assets/images/gal_2026_4.png',
+        'assets/images/gal_2026_5.png',
+        'assets/images/gal_2026_6.png',
+        'assets/images/gal_2026_7.png',
+        'assets/images/gal_2026_8.png'
+      ],
+      currentSlide: 0,
+
+      init() {
+        this.renderHubMaterials();
+        this.initChart();
+        setInterval(() => this.nextSlide(), 5000);
+
+        const hash = window.location.hash.replace('#', '') || 'home';
+        this.showPage(hash, false);
+
+        window.addEventListener('hashchange', () => {
+          const newHash = window.location.hash.replace('#', '') || 'home';
+          this.showPage(newHash, false);
+        });
+
+        document.getElementById('mobile-toggle')?.addEventListener('click', () => {
+          document.getElementById('mobile-menu')?.classList.toggle('open');
+        });
+      },
+
+      showPage(pageId, updateHash = true) {
+        const pages = [
+          'home', 'about', 'previous-results', 'competitions', 'sponsors',
+          'contact', 'support', 'study-hub', 'terms', 'privacy', 'refund', 'disclaimer'
+        ];
+        const target = pages.includes(pageId) ? pageId : 'home';
+
+        pages.forEach(p => {
+          const el = document.getElementById(`page-${p}`);
+          if (el) el.classList.add('hidden');
+
+          const navBtn = document.getElementById(`nav-btn-${p}`);
+          if (navBtn) {
+            navBtn.classList.remove('active-nav');
+          }
+        });
+
+        const activePage = document.getElementById(`page-${target}`);
+        if (activePage) activePage.classList.remove('hidden');
+
+        const activeNavBtn = document.getElementById(`nav-btn-${target}`);
+        if (activeNavBtn) activeNavBtn.classList.add('active-nav');
+
+        if (updateHash) {
+          window.location.hash = target;
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('mobile-menu')?.classList.remove('open');
+
+        if (target === 'home') {
+          setTimeout(() => this.initChart(), 150);
+        }
+      },
+
+      nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+        const img = document.getElementById('carousel-img');
+        if (img) img.src = this.slides[this.currentSlide];
+      },
+
+      prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+        const img = document.getElementById('carousel-img');
+        if (img) img.src = this.slides[this.currentSlide];
+      },
+
+      initChart() {
+        if (typeof initGyanCharts === 'function') {
+          initGyanCharts();
+        }
+      },
+
+      handleContactWhatsApp(e) {
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value;
+        const phone = document.getElementById('contact-phone').value;
+        const address = document.getElementById('contact-address').value;
+        const msg = document.getElementById('contact-msg').value;
+
+        const text = encodeURIComponent(`*Query from Gyanexia Website:*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+📍 *Address:* ${address}
+💬 *Message:* ${msg}`);
+        window.open(`https://wa.me/918840284749?text=${text}`, '_blank');
+      },
+
+      openRazorpayModal() {
+        this.goToRzpStep1();
+        document.getElementById('razorpay-modal')?.classList.remove('hidden');
+      },
+
+      closeRazorpayModal() {
+        document.getElementById('razorpay-modal')?.classList.add('hidden');
+      },
+
+      goToRzpStep1() {
+        document.getElementById('rzp-step-1')?.classList.remove('hidden');
+        document.getElementById('rzp-step-2')?.classList.add('hidden');
+        document.getElementById('rzp-step-3')?.classList.add('hidden');
+        document.getElementById('rzp-step-4')?.classList.add('hidden');
+        document.getElementById('rzp-footer-bar')?.classList.remove('hidden');
+      },
+
+      goToRzpStep2() {
+        document.getElementById('rzp-step-1')?.classList.add('hidden');
+        document.getElementById('rzp-step-2')?.classList.remove('hidden');
+        document.getElementById('rzp-step-3')?.classList.add('hidden');
+        document.getElementById('rzp-step-4')?.classList.add('hidden');
+        document.getElementById('rzp-footer-bar')?.classList.add('hidden');
+      },
+
+      startPaymentProcessing(methodName) {
+        document.getElementById('rzp-step-1')?.classList.add('hidden');
+        document.getElementById('rzp-step-2')?.classList.add('hidden');
+        document.getElementById('rzp-step-3')?.classList.remove('hidden');
+        document.getElementById('rzp-step-4')?.classList.add('hidden');
+        document.getElementById('rzp-footer-bar')?.classList.add('hidden');
+
+        setTimeout(() => {
+          document.getElementById('rzp-step-3')?.classList.add('hidden');
+          document.getElementById('rzp-step-4')?.classList.remove('hidden');
+          const successAmt = document.getElementById('success-amt-text');
+          if (successAmt) successAmt.textContent = `₹${this.currentAmount}`;
+          if (typeof confetti === 'function') confetti({ particleCount: 150, spread: 90 });
+        }, 2200);
+      },
+
+      cancelPaymentProcessing() {
+        this.goToRzpStep2();
+      },
+
+      setRzpAmount(amt) {
+        this.currentAmount = amt;
+        const inp = document.getElementById('rzp-custom-amt');
+        if (inp) inp.value = amt;
+        this.updateRzpAmount(amt);
+      },
+
+      updateRzpAmount(val) {
+        const amt = parseFloat(val) || 10;
+        this.currentAmount = amt;
+        const disp = document.getElementById('rzp-total-amt-display');
+        if (disp) disp.textContent = `₹${amt}`;
+      },
+
+      openMockTestModal(testId) {
+        document.getElementById('mock-test-modal')?.classList.remove('hidden');
+        examEngine.startTest(testId);
+      },
+
+      closeMockTestModal() {
+        examEngine.exitTest();
+        document.getElementById('mock-test-modal')?.classList.add('hidden');
+      },
+
+      openTalentHuntModal() {
+        document.getElementById('talent-hunt-modal')?.classList.remove('hidden');
+      },
+
+      closeTalentHuntModal() {
+        document.getElementById('talent-hunt-modal')?.classList.add('hidden');
+      },
+
+      handleRegistrationSubmit(e) {
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value;
+        const sClass = document.getElementById('reg-class').value;
+        const roll = 'GYAN26-' + Math.floor(100000 + Math.random() * 900000);
+
+        document.getElementById('admit-roll').textContent = roll;
+        document.getElementById('admit-name').textContent = name;
+        document.getElementById('admit-class').textContent = sClass;
+
+        document.getElementById('reg-form-view')?.classList.add('hidden');
+        document.getElementById('reg-admit-view')?.classList.remove('hidden');
+
+        if (typeof confetti === 'function') confetti({ particleCount: 100, spread: 70 });
+      },
+
+      renderHubMaterials() {
+        const grid = document.getElementById('hub-study-materials-grid');
+        if (!grid || !window.GyanData) return;
+
+        let html = '';
+        GyanData.studyMaterials.forEach(m => {
+          html += `
+            <div class="p-4 rounded-2xl border bg-white flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded">${m.subject}</span>
+                <h5 class="font-bold text-xs text-slate-900 mt-2">${m.title}</h5>
+                <p class="text-[11px] text-slate-500 mt-1">${m.classLevel} • ${m.pages} Pages</p>
+              </div>
+              <button onclick="alert('📥 Downloading: ${m.title}');" class="mt-3 py-1.5 rounded-lg bg-slate-100 hover:bg-rose-500 hover:text-white text-xs font-bold transition">
+                Download PDF
+              </button>
+            </div>
+          `;
+        });
+        grid.innerHTML = html;
+      }
+    };
+
+    window.addEventListener('DOMContentLoaded', () => app.init());
+  </script>
+</body>
+</html>
