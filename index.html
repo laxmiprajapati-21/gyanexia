@@ -198,14 +198,14 @@
         </div>
       </section>
 
-      <!-- SLIDER / CAROUSEL -->
+            <!-- SLIDER / CAROUSEL (EXACT MATCH TO SCREENSHOT) -->
       <section class="slider-section">
-        <div class="max-w-4xl mx-auto px-4">
-          <div class="slider-image-container relative">
-            <img id="carousel-img" src="assets/images/slider_exam_main.png" alt="Classroom Examination" class="slider-image">
-            <button onclick="app.prevSlide()" class="slider-arrow prev">❮</button>
-            <button onclick="app.nextSlide()" class="slider-arrow next">❯</button>
+        <div class="slider-container">
+          <button onclick="app.prevSlide()" class="slider-btn prev">❮</button>
+          <div class="slider-image-container">
+            <img id="carousel-img" src="assets/images/gal_2026_1.png" alt="Classroom Examination" class="slider-image">
           </div>
+          <button onclick="app.nextSlide()" class="slider-btn next">❯</button>
         </div>
       </section>
 
@@ -221,28 +221,36 @@
         </div>
       </section>
 
-      <!-- FOUNDER SECTION -->
+            <!-- FOUNDER SECTION (EXACT MATCH TO SCREENSHOT & LIVE GYANEXIA.IN) -->
       <section class="founder-section">
-        <div class="max-w-4xl mx-auto px-4">
+        <div class="section-content max-w-5xl mx-auto px-4">
           <div class="section-header">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-[#E11D48] brand-font mb-2">Meet Our Founder</h2>
-            <blockquote class="founder-subtitle">
+            <h2 class="section-title">Meet Our Founder</h2>
+            <p class="section-description">
               "At Gyanexia, our mission is to transform quality education and knowledge sharing into an accessible and impactful experience for all."
-            </blockquote>
+            </p>
           </div>
 
-          <div class="founder-card">
-            <div class="founder-image">
-              <img src="assets/images/founder-image.65405e19bb9303483795.jpeg" alt="Nikhil Prajapati">
-            </div>
-            <div class="founder-info">
-              <h3 class="founder-name">Nikhil Prajapati</h3>
-              <p class="founder-role">Founder</p>
-              <p class="founder-bio">
-                Hi, I am Nikhil Prajapati, a student at <strong>IIT Kanpur</strong> and the founder of Gyanexia.
-              </p>
-              <div class="founder-quote">
-                "Talent is everywhere, but opportunity is not. We're here to ensure every student gets a fair chance."
+          <div class="founder-card-container">
+            <div class="founder-card">
+              <div class="founder-card-content flex flex-col md:flex-row">
+                <div class="founder-image-container md:w-1/2 overflow-hidden">
+                  <div class="founder-image" style="background-image: url('assets/images/founder-image.65405e19bb9303483795.jpeg'); background-size: cover; background-position: center top; min-height: 400px; width: 100%; height: 100%;"></div>
+                </div>
+                <div class="founder-details md:w-1/2 p-8 md:p-12 flex items-center">
+                  <div class="founder-info space-y-4">
+                    <div>
+                      <h3 class="founder-name text-2xl md:text-3xl font-bold text-slate-900">Nikhil Prajapati</h3>
+                      <p class="founder-title text-blue-600 font-semibold text-base mt-1">Founder</p>
+                    </div>
+                    <p class="founder-bio text-slate-600 text-base leading-relaxed">
+                      Hi, I am Nikhil Prajapati, a student at <strong>IIT Kanpur</strong> and the founder of Gyanexia.
+                    </p>
+                    <blockquote class="founder-quote border-l-4 border-blue-600 pl-4 py-1 text-slate-700 text-base italic leading-relaxed">
+                      “Talent is everywhere, but opportunity is not. We’re here to ensure every student gets a fair chance.”
+                    </blockquote>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -427,16 +435,15 @@
       </div>
     </div>
 
-    <!-- 5. SPONSORS PAGE -->
+        <!-- 5. SPONSORS PAGE (EXACT MATCH TO SCREENSHOT & LIVE GYANEXIA.IN) -->
     <div id="page-sponsors" class="site-page hidden">
       <div class="sponsors-container">
         <h1 class="sponsors-title">Our Sponsors</h1>
-        <div class="sponsors-card">
-          <p>
-            We will be grateful to organizations and individuals who support <strong>Gyanexia</strong> in empowering young minds through learning and competitions. 🤝✨
-          </p>
-        </div>
+        <p class="sponsors-message">
+          We will be grateful to organizations and individuals who support <strong>Gyanexia</strong> in empowering young minds through learning and competitions. 🤝✨
+        </p>
       </div>
+    </div>
     </div>
 
     <!-- 6. CONTACT US PAGE -->
