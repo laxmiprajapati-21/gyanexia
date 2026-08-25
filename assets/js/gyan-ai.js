@@ -11,7 +11,7 @@ class GyanAIStudyBuddy {
     this.knowledgeBase = [
       {
         keywords: ['talent hunt', 'registration', 'prize', 'exam date', 'scholarship'],
-        response: '🎯 **Gyanexia Talent Hunt 2026 Key Highlights**:\n- **Eligibility:** Students of Class 5th to 12th\n- **Exam Month:** Coming this December 2026\n- **Prizes & Awards:** ₹5,00,000+ scholarship pool, high-performance laptops for toppers, IIT Kanpur mentorship, gold/silver medals & certificates.\n- **Syllabus:** Mathematics, Science & Mental Ability (MAT) suited for your class level.\n\nYou can click the **"Register for Talent Hunt"** button on the website to generate your official Admit Card!'
+        response: '🎯 **Gyanexia Talent Hunt 2026 Key Highlights**:\n- **Eligibility:** Students of Class 5th to 12th\n- **Exam Month:** Coming this December 2026\n- **Prizes & Awards:** ₹5,00,000+ scholarship pool, high-performance laptops for toppers, NIT Patna mentorship, gold/silver medals & certificates.\n- **Syllabus:** Mathematics, Science & Mental Ability (MAT) suited for your class level.\n\nYou can click the **"Register for Talent Hunt"** button on the website to generate your official Admit Card!'
       },
       {
         keywords: ['quadratic', 'roots', 'discriminant', 'formula'],
@@ -27,7 +27,7 @@ class GyanAIStudyBuddy {
       },
       {
         keywords: ['summer camp', 'ai course', 'camp'],
-        response: '☀️ **Gyanexia Summer Camp \'26**:\n- 100% FREE online summer enrichment for Class 5th to 10th students.\n- Curriculum: Basic Coding & AI, Vedic Speed Maths, Public Speaking & Communication, and DIY Science Experiments.\n- Led by IIT Kanpur alumni and passionate educators.'
+        response: '☀️ **Gyanexia Summer Camp \'26**:\n- 100% FREE online summer enrichment for Class 5th to 10th students.\n- Curriculum: Basic Coding & AI, Vedic Speed Maths, Public Speaking & Communication, and DIY Science Experiments.\n- Led by NIT Patna alumni and passionate educators.'
       },
       {
         keywords: ['practice', 'questions', 'quiz', 'problem'],
@@ -35,7 +35,7 @@ class GyanAIStudyBuddy {
       },
       {
         keywords: ['nikhil', 'founder', 'iit kanpur', 'about'],
-        response: '🎓 **About the Founder**:\n**Nikhil Prajapati** is a student at **IIT Kanpur** and the visionary founder of Gyanexia. Driven by the philosophy that *"Talent is everywhere, but opportunity is not"*, he started Gyanexia to provide high-quality learning, Olympiad prep, and competitive talent hunts to students everywhere.'
+        response: '🎓 **About the Founder**:\n**Laxmi Prajapati** is a student at **NIT Patna** and the visionary founder of Gyanexia. Driven by the philosophy that *"Talent is everywhere, but opportunity is not"*, he started Gyanexia to provide high-quality learning, Olympiad prep, and competitive talent hunts to students everywhere.'
       }
     ];
   }

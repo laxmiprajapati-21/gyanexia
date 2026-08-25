@@ -1,7 +1,7 @@
 // Gyanexia Study Platform Database
 const GyanData = {
   announcements: [
-    { text: "🏆 Gyanexia Talent Hunt 2026 is Coming This December – Registrations Opening Soon! Win Scholarships, Laptops & IIT Kanpur Mentorship!", tag: "Talent Hunt 2026" },
+    { text: "🏆 Gyanexia Talent Hunt 2026 is Coming This December – Registrations Opening Soon! Win Scholarships, Laptops & NIT Patna Mentorship!", tag: "Talent Hunt 2026" },
     { text: "✨ Free Mathematics & Olympiad Foundation Live Sessions every weekend for Class 5 to 10.", tag: "Live Classes" },
     { text: "📚 500+ Practice DPPs, Formula Cheat Sheets and PYQs now live in the Study Material Hub.", tag: "Study Resources" }
   ],
@@ -384,7 +384,7 @@ const GyanData = {
       readTime: "45 mins",
       downloads: "22.8k",
       badge: "Official",
-      contentSummary: "Complete authentic question papers from previous Gyanexia Talent Hunt editions with step-by-step video solution notes by Nikhil Prajapati and IIT Kanpur mentors."
+      contentSummary: "Complete authentic question papers from previous Gyanexia Talent Hunt editions with step-by-step video solution notes by Laxmi Prajapati and NIT Patna mentors."
     }
   ],
 

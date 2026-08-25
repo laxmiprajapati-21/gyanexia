@@ -45,7 +45,7 @@ class GyanexiaApp {
     const slides = [
       { url: 'assets/images/classroom_exam.png', caption: 'Classroom Examination' },
       { url: 'assets/images/summer_camp.png', caption: 'Gyanexia Summer Camp' },
-      { url: 'assets/images/founder_nikhil.png', caption: 'Nikhil Prajapati Mentoring' }
+      { url: 'assets/images/founder_nikhil.png', caption: 'Laxmi Prajapati Mentoring' }
     ];
 
     this.slides = slides;

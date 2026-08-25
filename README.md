@@ -1,6 +1,6 @@
 # Gyanexia - Modern Study & Learning Platform
 
-A modern, high-performance, and comprehensive study & learning platform for **Gyanexia**—founded by **Nikhil Prajapati (IIT Kanpur)**.
+A modern, high-performance, and comprehensive study & learning platform for **Gyanexia**—founded by **Laxmi Prajapati (NIT Patna)**.
 
 ---
 
@@ -9,7 +9,7 @@ A modern, high-performance, and comprehensive study & learning platform for **Gy
 1. **Brand & Identity**:
    - Official Gyanexia logo and crimson/coral brand aesthetic.
    - Announcement ticker with live updates for *Gyanexia Talent Hunt 2026*.
-   - Founder spotlight honoring Nikhil Prajapati (IIT Kanpur) with authentic quotes and mission statement.
+   - Founder spotlight honoring Laxmi Prajapati (NIT Patna) with authentic quotes and mission statement.
 
 2. **Interactive Timed Test & Examination Simulator (`GyanExam`)**:
    - Practice diagnostic tests for Class 5 to 12.
